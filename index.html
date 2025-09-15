@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Canvas for particle animation -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#hero" class="logo-link">
+                    <span class="logo-text">HERMES</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#section1">Privacy</a></li>
+                <li><a href="#section2">Network</a></li>
+                <li><a href="#section3">Security</a></li>
+                <li><a href="#section4">Open Source</a></li>
+                <li><a href="#footer" class="nav-cta">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with main headline -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">The future of<br>messaging</h1>
+            <p class="hero-subtitle">Decentralized, encrypted messaging for true privacy</p>
+        </div>
+    </section>
+
+    <!-- Section 1: Globe - Privacy -->
+    <section id="section1" class="content-section">
+        <div class="section-content">
+            <h2 class="section-title">Privacy First</h2>
+            <p class="section-text">We believe everyone has the right to privacy. At Hermes, privacy is not measured on a scale, it is absolute. Your messages never pass through a central server and are never able to be viewed by anyone, not even the Hermes team. We ensure that your messages stay your own.</p>
+        </div>
+    </section>
+
+    <!-- Section 2: Box - Network -->
+    <section id="section2" class="content-section section-right">
+        <div class="section-content">
+            <h2 class="section-title">Decentralized Network</h2>
+            <p class="section-text">Hermes works via a decentralized, peer-to-peer network. Imagine the integrity of the Bitcoin network but to send messages instead of funds. Small Proof of Work (PoW) tasks keep the network safe against attackers and allow messages to be sent without any fees.</p>
+        </div>
+    </section>
+
+    <!-- Section 3: Torus - Security -->
+    <section id="section3" class="content-section">
+        <div class="section-content">
+            <h2 class="section-title">Unbreakable Security</h2>
+            <p class="section-text">Security isn't an afterthought—it's our foundation. Hermes leverages SHA-256, the same encryption standard used by Bitcoin and the NSA, in addition to the obfuscation framework Dandelion++ developed by Monero (XMR), to keep messages secure against all threats. Furthermore, since all messages are sent via a peer-to-peer distributed network, no centralized authority or organization has access to your messages or knows who you are messaging.</p>
+        </div>
+    </section>
+
+    <!-- Section 4: Pyramid - Open Source -->
+    <section id="section4" class="content-section section-right">
+        <div class="section-content">
+            <h2 class="section-title">Open Source</h2>
+            <p class="section-text">Don't just take our word for it, the Hermes network is completely open source and available to everyone here. We believe that a network that champions true privacy should itself never be private.</p>
+        </div>
+    </section>
+
+    <!-- Section 5: Cylinder - Join Us -->
+    <!-- <section id="section5" class="content-section">
+        <div class="section-content">
+            <h2 class="section-title">Join the Revolution</h2>
+            <p class="section-text">Be part of the movement for digital freedom. Join thousands who have already chosen privacy over surveillance, ownership over control, and freedom over censorship. The future of messaging is here.</p>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">HERMES</h3>
+                <p class="footer-tagline">The future, faster</p>
+            </div>
+            <div class="footer-section">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="#section1">Privacy</a></li>
+                    <li><a href="#section2">Network</a></li>
+                    <li><a href="#section3">Security</a></li>
+                    <li><a href="#section4">Open Source</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Partners</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Hermes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="particles.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
