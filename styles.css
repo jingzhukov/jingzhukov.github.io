@@ -209,6 +209,7 @@ body {
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
+    position: relative;
 }
 
 .hero-title {
@@ -233,6 +234,41 @@ body {
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
     animation-delay: 2.3s;
+}
+
+/* Beta Alert */
+.beta-alert {
+    margin-bottom: var(--space-md);
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1.8s;
+}
+
+.beta-badge {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 67, 67, 0.4);
+    border-radius: 24px;
+    color: #ff4343;
+    font-size: var(--font-sm);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 0.9;
+    }
 }
 
 /* Content Sections */
@@ -727,9 +763,49 @@ body {
     .news-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .news-card.featured {
         grid-row: span 1;
+    }
+}
+
+/* Mobile and small screens */
+@media (max-width: 768px) {
+    /* Center all content sections on mobile */
+    .content-section {
+        justify-content: center;
+        padding: var(--space-lg) var(--space-sm);
+    }
+
+    .section-content {
+        max-width: calc(100% - var(--space-md));
+        margin: 0 auto;
+        padding: var(--space-md);
+    }
+
+    /* Override right alignment on mobile */
+    .section-right {
+        justify-content: center;
+    }
+
+    .section-right .section-content {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    /* Adjust hero for mobile */
+    .hero-title {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-base);
+        padding: 0 var(--space-sm);
+    }
+
+    .beta-badge {
+        font-size: var(--font-xs);
+        padding: 0.4rem 1rem;
     }
 }
 
@@ -807,6 +883,39 @@ body {
     }
 
     .footer-links {
+        margin-bottom: var(--space-sm);
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .content-section {
+        padding: var(--space-md) var(--space-xs);
+    }
+
+    .section-content {
+        max-width: 100%;
+        padding: var(--space-sm);
+        border-radius: 12px;
+    }
+
+    .section-title {
+        font-size: var(--font-xl);
+    }
+
+    .section-text {
+        font-size: var(--font-sm);
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-sm);
+    }
+
+    .beta-alert {
         margin-bottom: var(--space-sm);
     }
 }
