@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series 65 Full Practice Exam</title>
+    <link rel="stylesheet" href="exam-style.css">
+</head>
+<body>
+    <div class="exam-container">
+        <!-- Exam Header -->
+        <header class="exam-header">
+            <h1>Series 65 Practice Exam</h1>
+            <div class="exam-timer" id="timer">Time Remaining: 180:00</div>
+            <div class="exam-progress">
+                <span>Question <span id="current-question">0</span> of <span id="total-questions">0</span></span>
+            </div>
+        </header>
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="start-screen">
+            <h2>Full-Length Practice Exam</h2>
+            <p class="exam-description">
+                This practice exam simulates the actual Series 65 exam with randomized questions covering all topics.
+            </p>
+            <div class="exam-details">
+                <div class="detail-item">
+                    <strong>Questions:</strong> 95 questions from our question bank
+                </div>
+                <div class="detail-item">
+                    <strong>Time Limit:</strong> 180 minutes (3 hours)
+                </div>
+                <div class="detail-item">
+                    <strong>Passing Score:</strong> 72% (68/95 questions)
+                </div>
+                <div class="detail-item">
+                    <strong>Coverage:</strong> Economics, Investments, Recommendations, Regulations
+                </div>
+            </div>
+            <button id="start-exam-btn" class="primary-btn">Start Exam</button>
+            <button id="back-to-study-btn" class="secondary-btn" onclick="window.location.href='index.html'">Back to Study Guide</button>
+        </div>
+
+        <!-- Exam Questions -->
+        <div id="exam-screen" class="exam-screen" style="display: none;">
+            <div id="question-container" class="question-container">
+                <!-- Questions will be loaded here dynamically -->
+            </div>
+
+            <div class="exam-nav">
+                <button id="prev-btn" class="nav-btn" disabled>Previous</button>
+                <button id="flag-btn" class="flag-btn">Flag for Review</button>
+                <button id="next-btn" class="nav-btn">Next</button>
+                <button id="submit-exam-btn" class="submit-btn" style="display: none;">Submit Exam</button>
+            </div>
+
+            <div class="question-navigator">
+                <div class="navigator-header">Question Navigator</div>
+                <div id="question-grid" class="question-grid">
+                    <!-- Question numbers will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="results-screen" style="display: none;">
+            <div class="results-container">
+                <h2>Exam Results</h2>
+                <div id="pass-fail" class="pass-fail"></div>
+
+                <div class="score-summary">
+                    <div class="score-card">
+                        <div class="score-label">Your Score</div>
+                        <div class="score-value" id="final-score">0%</div>
+                        <div class="score-detail" id="correct-count">0/95</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-label">Passing Score</div>
+                        <div class="score-value">72%</div>
+                        <div class="score-detail">68/95</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-label">Time Taken</div>
+                        <div class="score-value" id="time-taken">0:00</div>
+                    </div>
+                </div>
+
+                <div class="topic-breakdown" id="topic-breakdown">
+                    <h3>Performance by Topic</h3>
+                    <!-- Topic scores will be displayed here -->
+                </div>
+
+                <div class="review-section">
+                    <button id="review-wrong-btn" class="primary-btn">Review Incorrect Answers</button>
+                    <button id="retake-exam-btn" class="secondary-btn">Retake Exam</button>
+                    <button id="back-study-btn" class="secondary-btn" onclick="window.location.href='index.html'">Back to Study Guide</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review Mode -->
+        <div id="review-screen" class="review-screen" style="display: none;">
+            <div class="review-header">
+                <h2>Review: Incorrect Answers</h2>
+                <button id="exit-review-btn" class="secondary-btn">Back to Results</button>
+            </div>
+            <div id="review-container" class="review-container">
+                <!-- Wrong answers will be displayed here for review -->
+            </div>
+        </div>
+    </div>
+
+    <script src="exam-bank.js"></script>
+    <script src="practice-exam.js"></script>
+</body>
+</html>
