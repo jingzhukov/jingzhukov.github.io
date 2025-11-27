@@ -284,7 +284,7 @@ function takeBackMove() {
 function showBoard() {
     printLine('');
     const board = renderBoard();
-    board.split('\n').forEach(line => printLine(line, 'board'));
+    board.split('\n').forEach(line => printLine(line, 'board', true));
     printLine('');
     printLine(`${chess.turn() === 'w' ? 'White' : 'Black'} to move.`);
 }
@@ -298,7 +298,7 @@ function renderBoard() {
         for (let j = 0; j < 8; j++) {
             const piece = board[i][j];
             if (piece) {
-                output += ` ${getPieceSymbol(piece)} │`;
+                output += ` <span style="font-size: 12px;">${getPieceSymbol(piece)}</span> │`;
             } else {
                 output += '   │';
             }
@@ -455,11 +455,15 @@ function showHelp() {
     printLine('');
 }
 
-function printLine(text, type = '') {
+function printLine(text, type = '', useHTML = false) {
     const output = document.getElementById('output');
     const line = document.createElement('div');
     line.className = 'output-line' + (type ? ' ' + type : '');
-    line.textContent = text;
+    if (useHTML) {
+        line.innerHTML = text;
+    } else {
+        line.textContent = text;
+    }
     output.appendChild(line);
 
     // Auto-scroll to bottom
