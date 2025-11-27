@@ -71,8 +71,9 @@ body {
 
 .output-line.board {
     color: #ffffff;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.4;
+    letter-spacing: -0.5px;
 }
 
 .input-line {

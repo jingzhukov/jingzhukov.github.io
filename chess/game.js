@@ -291,26 +291,26 @@ function showBoard() {
 
 function renderBoard() {
     const board = chess.board();
-    let output = '  ┌──┬──┬──┬──┬──┬──┬──┬──┐\n';
+    let output = '  ┌───┬───┬───┬───┬───┬───┬───┬───┐\n';
 
     for (let i = 0; i < 8; i++) {
         output += `${8 - i} │`;
         for (let j = 0; j < 8; j++) {
             const piece = board[i][j];
             if (piece) {
-                output += `${getPieceSymbol(piece)}│`;
+                output += ` ${getPieceSymbol(piece)} │`;
             } else {
-                output += ' │';
+                output += '   │';
             }
         }
         output += ` ${8 - i}\n`;
         if (i < 7) {
-            output += '  ├──┼──┼──┼──┼──┼──┼──┼──┤\n';
+            output += '  ├───┼───┼───┼───┼───┼───┼───┼───┤\n';
         }
     }
 
-    output += '  └──┴──┴──┴──┴──┴──┴──┴──┘\n';
-    output += '   a  b  c  d  e  f  g  h';
+    output += '  └───┴───┴───┴───┴───┴───┴───┴───┘\n';
+    output += '    a   b   c   d   e   f   g   h';
 
     return output;
 }
