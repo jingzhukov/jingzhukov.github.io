@@ -291,7 +291,8 @@ function showBoard() {
 
 function renderBoard() {
     const board = chess.board();
-    let output = '  ┌───┬───┬───┬───┬───┬───┬───┬───┐\n';
+    // let output = '  ┌───┬───┬───┬───┬───┬───┬───┬───┐\n';
+    let output = '  ┌   ┬   ┬   ┬   ┬   ┬   ┬   ┬   ┐\n';
 
     for (let i = 0; i < 8; i++) {
         output += `${8 - i} │`;
