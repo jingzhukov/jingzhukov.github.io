@@ -18,22 +18,21 @@ body {
     width: 100%;
     max-width: 900px;
     background-color: #000;
-    border: 2px solid #00ff00;
+    border: 2px solid #ffffff;
     border-radius: 8px;
-    box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);
     overflow: hidden;
 }
 
 .terminal-header {
     background-color: #1a1a1a;
     padding: 10px 15px;
-    border-bottom: 1px solid #00ff00;
+    border-bottom: 1px solid #ffffff;
     display: flex;
     align-items: center;
 }
 
 .terminal-title {
-    color: #00ff00;
+    color: #ffffff;
     font-size: 14px;
     font-weight: bold;
 }
@@ -47,7 +46,7 @@ body {
 }
 
 #output {
-    color: #00ff00;
+    color: #ffffff;
     margin-bottom: 10px;
     line-height: 1.6;
 }
@@ -83,7 +82,7 @@ body {
 }
 
 .prompt {
-    color: #00ff00;
+    color: #ffffff;
     font-weight: bold;
 }
 
@@ -91,15 +90,15 @@ body {
     flex: 1;
     background: transparent;
     border: none;
-    color: #00ff00;
+    color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
     outline: none;
-    caret-color: #00ff00;
+    caret-color: #ffffff;
 }
 
 #input::selection {
-    background-color: #00ff00;
+    background-color: #ffffff;
     color: #000;
 }
 
@@ -113,12 +112,12 @@ body {
 }
 
 .terminal-body::-webkit-scrollbar-thumb {
-    background: #00ff00;
+    background: #ffffff;
     border-radius: 5px;
 }
 
 .terminal-body::-webkit-scrollbar-thumb:hover {
-    background: #00dd00;
+    background: #cccccc;
 }
 
 /* Blinking cursor effect */

@@ -91,15 +91,22 @@ function showEloSelection() {
     currentState = GameState.ELO_SELECT;
     printLine('');
     printLine('Select opponent strength (ELO rating):');
-    printLine('  1. Beginner      (800)');
-    printLine('  2. Novice        (1200)');
-    printLine('  3. Intermediate  (1600)');
-    printLine('  4. Advanced      (2000)');
-    printLine('  5. Expert        (2400)');
-    printLine('  6. Master        (2800)');
-    printLine('  7. Grandmaster   (3200)');
+    printLine('  1.  Beginner      (400)');
+    printLine('  2.  Casual        (800)');
+    printLine('  3.  Novice        (1000)');
+    printLine('  4.  Club Player   (1200)');
+    printLine('  5.  Intermediate  (1400)');
+    printLine('  6.  Advanced      (1600)');
+    printLine('  7.  Strong        (1800)');
+    printLine('  8.  Expert        (2000)');
+    printLine('  9.  Candidate     (2200)');
+    printLine('  10. Master        (2400)');
+    printLine('  11. Int. Master   (2600)');
+    printLine('  12. Grandmaster   (2800)');
+    printLine('  13. Super GM      (3000)');
+    printLine('  14. World Class   (3200)');
     printLine('');
-    printLine('Enter number (1-7) or custom ELO (e.g., 1850):');
+    printLine('Enter number (1-14) or type any custom ELO (400-3500):');
 }
 
 function showColorSelection() {
@@ -153,12 +160,21 @@ function configureStockfish() {
 
 function eloToSkillLevel(elo) {
     // Map ELO to Stockfish skill level (0-20)
-    if (elo <= 800) return 0;
-    if (elo <= 1200) return 5;
-    if (elo <= 1600) return 10;
-    if (elo <= 2000) return 13;
-    if (elo <= 2400) return 16;
+    // Linear mapping for more granular control
+    if (elo <= 400) return 0;
+    if (elo <= 600) return 1;
+    if (elo <= 800) return 3;
+    if (elo <= 1000) return 5;
+    if (elo <= 1200) return 7;
+    if (elo <= 1400) return 9;
+    if (elo <= 1600) return 11;
+    if (elo <= 1800) return 13;
+    if (elo <= 2000) return 14;
+    if (elo <= 2200) return 16;
+    if (elo <= 2400) return 17;
+    if (elo <= 2600) return 18;
     if (elo <= 2800) return 19;
+    if (elo <= 3000) return 20;
     return 20;
 }
 
@@ -284,7 +300,7 @@ function renderBoard() {
             if (piece) {
                 output += ` ${getPieceSymbol(piece)} │`;
             } else {
-                output += '   │';
+                output += '    │';
             }
         }
         output += ` ${8 - i}\n`;
@@ -301,8 +317,8 @@ function renderBoard() {
 
 function getPieceSymbol(piece) {
     const symbols = {
-        'p': '♟', 'n': '♞', 'b': '♝', 'r': '♜', 'q': '♛', 'k': '♚',
-        'P': '♙', 'N': '♘', 'B': '♗', 'R': '♖', 'Q': '♕', 'K': '♔'
+        'p': '♙', 'n': '♘', 'b': '♗', 'r': '♖', 'q': '♕', 'k': '♔',
+        'P': '♟', 'N': '♞', 'B': '♝', 'R': '♜', 'Q': '♛', 'K': '♚'
     };
     // White pieces are uppercase, black pieces are lowercase
     const key = piece.color === 'w' ? piece.type.toUpperCase() : piece.type.toLowerCase();
@@ -362,13 +378,20 @@ function handleInput(input) {
 
 function handleEloInput(input) {
     const eloMap = {
-        '1': 800,
-        '2': 1200,
-        '3': 1600,
-        '4': 2000,
-        '5': 2400,
-        '6': 2800,
-        '7': 3200
+        '1': 400,
+        '2': 800,
+        '3': 1000,
+        '4': 1200,
+        '5': 1400,
+        '6': 1600,
+        '7': 1800,
+        '8': 2000,
+        '9': 2200,
+        '10': 2400,
+        '11': 2600,
+        '12': 2800,
+        '13': 3000,
+        '14': 3200
     };
 
     if (eloMap[input]) {
@@ -380,7 +403,7 @@ function handleEloInput(input) {
             selectedElo = customElo;
             showColorSelection();
         } else {
-            printLine('Invalid selection. Enter 1-7 or custom ELO (400-3500).', 'error');
+            printLine('Invalid selection. Enter 1-14 or custom ELO (400-3500).', 'error');
         }
     }
 }
