@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.terminal {
+    width: 100%;
+    max-width: 900px;
+    background-color: #000;
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);
+    overflow: hidden;
+}
+
+.terminal-header {
+    background-color: #1a1a1a;
+    padding: 10px 15px;
+    border-bottom: 1px solid #00ff00;
+    display: flex;
+    align-items: center;
+}
+
+.terminal-title {
+    color: #00ff00;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.terminal-body {
+    padding: 20px;
+    min-height: 500px;
+    max-height: 70vh;
+    overflow-y: auto;
+    background-color: #000;
+}
+
+#output {
+    color: #00ff00;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.output-line {
+    margin: 5px 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.output-line.error {
+    color: #ff4444;
+}
+
+.output-line.info {
+    color: #00aaff;
+}
+
+.output-line.warning {
+    color: #ffaa00;
+}
+
+.output-line.board {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.prompt {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+#input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    outline: none;
+    caret-color: #00ff00;
+}
+
+#input::selection {
+    background-color: #00ff00;
+    color: #000;
+}
+
+/* Custom scrollbar */
+.terminal-body::-webkit-scrollbar {
+    width: 10px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background: #00ff00;
+    border-radius: 5px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+    background: #00dd00;
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.cursor {
+    animation: blink 1s infinite;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .terminal {
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    .terminal-body {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    #input {
+        font-size: 14px;
+    }
+}

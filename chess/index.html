@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess CLI - Blindfold Training</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <span class="terminal-title">chess@blindfold:~$</span>
+        </div>
+        <div class="terminal-body" id="terminal">
+            <div id="output"></div>
+            <div class="input-line">
+                <span class="prompt">&gt;</span>
+                <input type="text" id="input" autocomplete="off" autofocus>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="stockfish.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
