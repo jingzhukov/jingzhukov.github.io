@@ -298,7 +298,7 @@ function renderBoard() {
         for (let j = 0; j < 8; j++) {
             const piece = board[i][j];
             if (piece) {
-                output += ` <span style="font-size: 12px;">${getPieceSymbol(piece)}</span> │`;
+                output += ` <span style="font-size: 12.4px;">${getPieceSymbol(piece)}</span> │`;
             } else {
                 output += '   │';
             }
